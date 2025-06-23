@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portal Kampus - UNCP</title>
+  <link rel="icon" href="logo cokro.png" type="image/png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    html,
+    body {
+      scroll-behavior: smooth;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar {
+      z-index: 1000;
+      background: linear-gradient(90deg, #003366, #004080);
+    }
+
+    .navbar-brand img {
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .navbar-nav .nav-link {
+      color: white !important;
+      font-weight: 500;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #FFD700 !important;
+    }
+
+    /* Dropdown muncul saat hover */
+    .nav-item.dropdown:hover .dropdown-menu {
+      display: block;
+      animation: fadeIn 0.2s ease-in-out;
+    }
+
+    /* Efek animasi muncul */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(5px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Warna dropdown */
+    .dropdown-menu {
+      background-color: #004080;
+      border: none;
+      border-radius: 0.5rem;
+      min-width: 200px;
+    }
+
+    /* Isi dropdown */
+    .dropdown-menu .dropdown-item {
+      color: white;
+      padding: 10px 20px;
+      transition: background 0.2s;
+    }
+
+    .dropdown-menu .dropdown-item:hover {
+      background-color: #0059b3;
+      color: #FFD700;
+    }
+
+    .full-section {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #f8f9fa, #e2edff);
+    }
+
+    .hero-text {
+      text-align: left;
+    }
+
+    .hero .btn {
+      margin-right: 15px;
+    }
+
+    .login-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(to bottom, #f8f9fa, #fffdf5);
+    }
+
+    .login-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .login-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .footer {
+      background-color: #003366;
+      color: #fff;
+      padding: 40px 0;
+    }
+
+    .footer .row {
+      align-items: center;
+    }
+
+    .footer img {
+      max-height: 100px;
+    }
+
+    .footer iframe {
+      border: 0;
+      width: 100%;
+      height: 200px;
+      border-radius: 8px;
+    }
+
+    .hover-link:hover {
+      color: #FFD700 !important;
+      transition: 0.3s;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#beranda">
+        <img src="logo cokro.png" alt="Logo Kampus">
+        <span class="fw-bold">Universitas Cokroaminoto Palopo</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav align-items-center">
+
+          <!-- Beranda -->
+          <li class="nav-item">
+            <a class="nav-link" href="#beranda">Beranda</a>
+          </li>
+
+          <!-- Input Hover Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#login" id="inputDropdown" role="button">
+              Input
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="dosen.php"><i class="fa-solid fa-chalkboard-user me-2"></i>Dosen</a>
+              </li>
+              <li><a class="dropdown-item" href="mahasiswa.php"><i
+                    class="fa-solid fa-user-graduate me-2"></i>Mahasiswa</a></li>
+              <li><a class="dropdown-item" href="staf.php"><i class="fa-solid fa-user-gear me-2"></i>Staf</a></li>
+            </ul>
+          </li>
+
+          <!-- Kontak -->
+          <li class="nav-item">
+            <a class="nav-link" href="#kontak">Kontak</a>
+          </li>
+
+          <!-- Profil -->
+          <li class="nav-item">
+            <a class="nav-link" href="profil.php"><i class="bi bi-person-circle me-1"></i>Profil</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Hero Section -->
+  <section class="hero full-section" id="beranda">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 hero-text">
+          <h1 class="display-5 fw-bold">Selamat Datang di <br><span style="color:#FFD700">Portal Kampus Kuning</span>
+          </h1>
+          <p class="lead">Input Data Dosen, Staf, dan Mahasiswa dalam satu platform terintegrasi untuk pengalaman kampus
+            yang lebih baik.</p>
+          <a href="#login" class="btn btn-warning btn-lg text-white">Input Sekarang <i
+              class="bi bi-arrow-right-circle ms-1"></i></a>
+        </div>
+        <div class="col-lg-6 text-center">
+          <img src="ux.png" alt="Ilustrasi" class="img-fluid" style="max-height: 350px;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Login Section Full Height -->
+  <section class="login-section" id="login">
+    <div class="container-fluid px-lg-5">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold">Silakan Input Data sesuai Peran Anda</h2>
+        <p class="text-muted">Pilih jenis akun untuk mengakses fitur yang telah disesuaikan dengan kebutuhan Anda.</p>
+      </div>
+      <div class="row justify-content-center g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="card h-100 shadow-lg border-0 rounded-4 p-3 login-card">
+            <div class="card-body text-center">
+              <div class="bg-light rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                style="width: 80px; height: 80px;">
+                <i class="bi bi-person-badge fs-2 text-primary"></i>
+              </div>
+              <h5 class="fw-bold">Dosen</h5>
+              <p class="text-muted small">Input data Mahasiswa (NIM, NAMA, ALAMAT, FAKULTAS).</p>
+              <a href="dosen.php" class="btn btn-outline-primary w-100 rounded-pill">Input Data Dosen</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="card h-100 shadow-lg border-0 rounded-4 p-3 login-card">
+            <div class="card-body text-center">
+              <div class="bg-light rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                style="width: 80px; height: 80px;">
+                <i class="bi bi-mortarboard fs-2 text-success"></i>
+              </div>
+              <h5 class="fw-bold">Mahasiswa</h5>
+              <p class="text-muted small">Input data Mahasiswa (NIM, NAMA, ALAMAT, FAKULTAS).</p>
+              <a href="mahasiswa.php" class="btn btn-outline-success w-100 rounded-pill">Input Data Mahasiswa</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="card h-100 shadow-lg border-0 rounded-4 p-3 login-card">
+            <div class="card-body text-center">
+              <div class="bg-light rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                style="width: 80px; height: 80px;">
+                <i class="bi bi-gear-fill fs-2 text-warning"></i>
+              </div>
+              <h5 class="fw-bold">Staf</h5>
+              <p class="text-muted small">Input data Mahasiswa (NIM, NAMA, ALAMAT, FAKULTAS).</p>
+              <a href="staf.php" class="btn btn-outline-warning w-100 rounded-pill">Input <datalist></datalist> Staf</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer text-white pt-5" id="kontak" style="background-color: #003366;">
+    <div class="container">
+      <div class="row text-start align-items-start">
+
+        <!-- Kiri: Logo & Slogan -->
+        <div class="col-md-3 mb-4 text-center">
+          <img src="logo cokro.png" alt="Logo Kampus" style="width: 160px; object-fit: contain;">
+          <!-- Ukuran logo diperbesar -->
+          <p class="mt-3 fw-bold">"Kampus Kuning Menyala"</p>
+        </div>
+
+        <!-- Tengah: Info & Kontak -->
+        <div class="col-md-6 mb-4">
+          <div class="row">
+            <!-- Navigasi -->
+            <div class="col-sm-6 mb-3">
+              <h5 class="fw-bold text-white">Informasi</h5>
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a href="#beranda" class="nav-link p-0 text-white hover-link">Beranda</a>
+                </li>
+                <li class="nav-item">
+                  <a href="#login" class="nav-link p-0 text-white hover-link">Input</a>
+                </li>
+                <li class="nav-item">
+                  <a href="#kontak" class="nav-link p-0 text-white hover-link">Kontak</a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Kontak -->
+            <div class="col-sm-6">
+              <h5 class="fw-bold text-white">Kontak</h5>
+              <p class="mb-1 hover-link"><i class="bi bi-telephone-fill me-2"></i>(0471) 22111</p>
+              <p class="mb-2 hover-link"><i class="bi bi-envelope-fill me-2"></i>pmb@uncp.ac.id</p>
+              <div>
+                <a href="https://www.instagram.com/pmb_uncp/" class="text-white me-3 hover-link"><i
+                    class="bi bi-instagram fs-5"></i></a>
+                <a href="https://www.facebook.com/infouncp/?locale=id_ID" class="text-white me-3 hover-link"><i
+                    class="bi bi-facebook fs-5"></i></a>
+                <a href="https://www.tiktok.com/@pmbuncp" class="text-white hover-link"><i
+                    class="bi bi-tiktok fs-5"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kanan: Maps -->
+        <div class="col-md-3 mb-4">
+          <iframe src="https://www.google.com/maps?q=Universitas+Cokroaminoto+Palopo&output=embed" width="100%"
+            height="150" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+
+      <hr class="border-light" />
+
+      <div class="text-center pb-3">
+        <small>&copy; 2025 Universitas Cokroaminoto Palopo</small>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
